@@ -11,23 +11,6 @@
 
 Disk::Disk() {}
 
-void Disk::getDiskSpace(const std::string& path) {
-    struct statvfs stat;
-
-    if (statvfs(path.c_str(), &stat) != 0) {
-        std::cerr << "Error: Cannot retrieve disk information for " << path << std::endl;
-        return;
-    }
-
-    unsigned long total = stat.f_blocks * stat.f_frsize;
-    unsigned long free = stat.f_bfree * stat.f_frsize;
-    unsigned long used = total - free;
-
-    std::cout << "\n\nTotal Disk Space: " << total / (1024 * 1024 * 1024) << " GB" << std::endl;
-    std::cout << "Used Disk Space: " << used / (1024 * 1024 * 1024) << " GB" << std::endl;
-    std::cout << "Free Disk Space: " << free / (1024 * 1024 * 1024) << " GB" << std::endl;
-}
-
 std::string Disk::getDiskModel(const std::string& diskName) {
     std::string path = "/sys/block/" + diskName + "/device/model";
     std::ifstream file(path);
@@ -95,5 +78,21 @@ void Disk::monitorDiskIO(const std::string& diskName) {
 
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
+}
+
+DiskSpaceInfo Disk::getDiskSpace(const std::string& path) {
+    struct statvfs stat;
+    DiskSpaceInfo info{};
+
+    if (statvfs(path.c_str(), &stat) != 0) {
+        std::cerr << "Error: Cannot retrieve disk information for " << path << std::endl;
+        return info;
+    }
+
+    info.total = stat.f_blocks * stat.f_frsize;
+    info.free = stat.f_bfree * stat.f_frsize;
+    info.used = info.total - info.free;
+
+    return info;
 }
 

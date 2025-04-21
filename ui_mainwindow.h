@@ -74,6 +74,9 @@ public:
     QFormLayout *formLayout_4;
     QLabel *labelDiskModel;
     QLabel *labelDiskSpeed;
+    QLabel *labelDiskTotal;
+    QLabel *labelDiskUsed;
+    QLabel *labelDiskFree;
     QWidget *NETWORK;
     QFormLayout *formLayout_5;
     QLabel *labelNetworkSpeed;
@@ -251,6 +254,21 @@ public:
 
         formLayout_4->setWidget(1, QFormLayout::LabelRole, labelDiskSpeed);
 
+        labelDiskTotal = new QLabel(DISK);
+        labelDiskTotal->setObjectName(QString::fromUtf8("labelDiskTotal"));
+
+        formLayout_4->setWidget(2, QFormLayout::LabelRole, labelDiskTotal);
+
+        labelDiskUsed = new QLabel(DISK);
+        labelDiskUsed->setObjectName(QString::fromUtf8("labelDiskUsed"));
+
+        formLayout_4->setWidget(3, QFormLayout::LabelRole, labelDiskUsed);
+
+        labelDiskFree = new QLabel(DISK);
+        labelDiskFree->setObjectName(QString::fromUtf8("labelDiskFree"));
+
+        formLayout_4->setWidget(4, QFormLayout::LabelRole, labelDiskFree);
+
         tabWidget->addTab(DISK, QString());
         NETWORK = new QWidget();
         NETWORK->setObjectName(QString::fromUtf8("NETWORK"));
@@ -335,6 +353,9 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(GPU), QCoreApplication::translate("MainWindow", "GPU", nullptr));
         labelDiskModel->setText(QCoreApplication::translate("MainWindow", "Disk Model:", nullptr));
         labelDiskSpeed->setText(QCoreApplication::translate("MainWindow", "Disk Speeds:", nullptr));
+        labelDiskTotal->setText(QCoreApplication::translate("MainWindow", "Total Disk Space:", nullptr));
+        labelDiskUsed->setText(QCoreApplication::translate("MainWindow", "Used Disk Space:", nullptr));
+        labelDiskFree->setText(QCoreApplication::translate("MainWindow", "Free Disk Space:", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(DISK), QCoreApplication::translate("MainWindow", "DISK", nullptr));
         labelNetworkSpeed->setText(QCoreApplication::translate("MainWindow", "Download:", nullptr));
         labelNetworkIP->setText(QCoreApplication::translate("MainWindow", "IPv4:", nullptr));

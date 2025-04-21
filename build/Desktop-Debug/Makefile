@@ -1531,6 +1531,13 @@ mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qrubberband.h \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qframe.h \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/QFormLayout \
+		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qformlayout.h \
+		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/QLayout \
+		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qlayout.h \
+		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/QGroupBox \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qgroupbox.h \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/QLabel \
@@ -1547,10 +1554,6 @@ mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qstatusbar.h \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/QTabWidget \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/QVBoxLayout \
-		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qboxlayout.h \
-		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qlayout.h \
-		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtWidgets/QWidget \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtConcurrent/QtConcurrent \
 		/home/oattia/Qt/6.8.2/gcc_64/include/QtConcurrent/QtConcurrentDepends \

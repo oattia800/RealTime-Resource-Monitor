@@ -417,6 +417,27 @@
           </property>
          </widget>
         </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelDiskTotal">
+          <property name="text">
+           <string>Total Disk Space:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="labelDiskUsed">
+          <property name="text">
+           <string>Used Disk Space:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="labelDiskFree">
+          <property name="text">
+           <string>Free Disk Space:</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="NETWORK">

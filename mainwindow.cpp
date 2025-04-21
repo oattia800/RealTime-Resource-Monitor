@@ -52,6 +52,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateStats()
 {
+    //CPU
     static QElapsedTimer heavyTimer;
     if (!heavyTimer.isValid()) heavyTimer.start();
 
@@ -80,6 +81,7 @@ void MainWindow::updateStats()
         });
     });
 
+    //GPU
     QtConcurrent::run([=]() {
         QString name = "Name: " + gpuInfo.getGpuName();
         QString clock = "Clock: " + gpuInfo.getGpuClockSpeed();
@@ -92,6 +94,7 @@ void MainWindow::updateStats()
         });
     });
 
+    //RAM
     QtConcurrent::run([=]() {
         QString total = QString("Total: %1 GB").arg(ramInfo.getMemtotal(), 0, 'f', 2);
         QString free = QString("Free: %1 GB").arg(ramInfo.getfreeMem(), 0, 'f', 2);
@@ -106,14 +109,24 @@ void MainWindow::updateStats()
         });
     });
 
+    //DISK
+
     if (heavyTimer.elapsed() > 3000) {
         heavyTimer.restart();
+
         QtConcurrent::run([=]() {
-            diskInfo.getDiskSpace("/home");
+            DiskSpaceInfo spaceInfo = diskInfo.getDiskSpace("/home");
             std::string diskModel = diskInfo.getDiskModel("sda");
+
+            QString totalDisk = QString("Total Disk Space: %1 GB").arg(spaceInfo.total / (1024.0 * 1024 * 1024), 0, 'f', 0);
+            QString usedDisk = QString("Used Disk Space: %1 GB").arg(spaceInfo.used / (1024.0 * 1024 * 1024), 0, 'f', 0);
+            QString freeDisk = QString("Free Disk Space: %1 GB").arg(spaceInfo.free / (1024.0 * 1024 * 1024), 0, 'f', 0);
 
             QMetaObject::invokeMethod(this, [=]() {
                 ui->labelDiskModel->setText(QString::fromStdString(diskModel));
+                ui->labelDiskTotal->setText(totalDisk);
+                ui->labelDiskUsed->setText(usedDisk);
+                ui->labelDiskFree->setText(freeDisk);
             });
         });
     }
@@ -128,17 +141,17 @@ void MainWindow::updateStats()
     double writeSpeed = (currWrite - prevWrite) / (1024.0 * 1024.0);
 
     QString ioText = QString("Read: %1 MB/s | Write: %2 MB/s")
-                         .arg(readSpeed, 0, 'f', 2)
-                         .arg(writeSpeed, 0, 'f', 2);
+                         .arg((currRead - prevRead) / (1024.0 * 1024.0), 0, 'f', 2)
+                         .arg((currWrite - prevWrite) / (1024.0 * 1024.0), 0, 'f', 2);
+
     static QString lastDiskText;
     if (lastDiskText != ioText) {
         ui->labelDiskSpeed->setText(ioText);
         lastDiskText = ioText;
     }
 
-    prevRead = currRead;
-    prevWrite = currWrite;
 
+    //NETWORK
     QtConcurrent::run([=]() {
         netInfo.updateStats();
         QString netSpeed = QString("Down: %1 MB/s | Up: %2 MB/s")
