@@ -304,36 +304,58 @@
        <attribute name="title">
         <string>CPU</string>
        </attribute>
-       <layout class="QFormLayout" name="formLayout">
-        <item row="1" column="0">
-         <widget class="QLabel" name="labelCpuModel">
-          <property name="text">
-           <string>Model:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="labelCpuClock">
-          <property name="text">
-           <string>Clock Speed:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="labelCpuArch">
-          <property name="text">
-           <string>Architecture:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="labelCpuUsage">
-          <property name="text">
-           <string>CPU Usage:</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QLabel" name="labelCpuModel">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>141</y>
+          <width>47</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Model:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelCpuClock">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>273</y>
+          <width>86</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Clock Speed:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelCpuArch">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>405</y>
+          <width>88</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Architecture:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelCpuUsage">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>9</y>
+          <width>77</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>CPU Usage:</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="RAM">
        <attribute name="title">

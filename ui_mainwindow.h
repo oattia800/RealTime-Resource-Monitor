@@ -55,11 +55,10 @@ public:
     QCheckBox *checkBox_5;
     QWidget *CPU;
     QFormLayout *formLayout;
+    QLabel *labelCpuUsage;
     QLabel *labelCpuModel;
     QLabel *labelCpuClock;
     QLabel *labelCpuArch;
-    QLabel *labelCpuUsage;
-    QWidget *layoutCpuChart;
     QWidget *RAM;
     QFormLayout *formLayout_2;
     QLabel *labelRamTotal;
@@ -175,6 +174,11 @@ public:
         CPU->setObjectName(QString::fromUtf8("CPU"));
         formLayout = new QFormLayout(CPU);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        labelCpuUsage = new QLabel(CPU);
+        labelCpuUsage->setObjectName(QString::fromUtf8("labelCpuUsage"));
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, labelCpuUsage);
+
         labelCpuModel = new QLabel(CPU);
         labelCpuModel->setObjectName(QString::fromUtf8("labelCpuModel"));
 
@@ -189,16 +193,6 @@ public:
         labelCpuArch->setObjectName(QString::fromUtf8("labelCpuArch"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, labelCpuArch);
-
-        labelCpuUsage = new QLabel(CPU);
-        labelCpuUsage->setObjectName(QString::fromUtf8("labelCpuUsage"));
-
-        formLayout->setWidget(0, QFormLayout::LabelRole, labelCpuUsage);
-
-        layoutCpuChart = new QWidget(CPU);
-        layoutCpuChart->setObjectName(QString::fromUtf8("layoutCpuChart"));
-
-        formLayout->setWidget(0, QFormLayout::FieldRole, layoutCpuChart);
 
         tabWidget->addTab(CPU, QString());
         RAM = new QWidget();
@@ -343,10 +337,10 @@ public:
         checkBox_4->setText(QCoreApplication::translate("MainWindow", "DISK", nullptr));
         checkBox_5->setText(QCoreApplication::translate("MainWindow", "NETWORK", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(General), QCoreApplication::translate("MainWindow", "Overview", nullptr));
+        labelCpuUsage->setText(QCoreApplication::translate("MainWindow", "CPU Usage:", nullptr));
         labelCpuModel->setText(QCoreApplication::translate("MainWindow", "Model:", nullptr));
         labelCpuClock->setText(QCoreApplication::translate("MainWindow", "Clock Speed:", nullptr));
         labelCpuArch->setText(QCoreApplication::translate("MainWindow", "Architecture:", nullptr));
-        labelCpuUsage->setText(QCoreApplication::translate("MainWindow", "CPU Usage:", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(CPU), QCoreApplication::translate("MainWindow", "CPU", nullptr));
         labelRamTotal->setText(QCoreApplication::translate("MainWindow", "Total Memory:", nullptr));
         labelRamFree->setText(QCoreApplication::translate("MainWindow", "Free Memory:", nullptr));

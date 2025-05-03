@@ -10,6 +10,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->tabWidget->setStyleSheet(R"(
+    QTabBar::tab {
+        font-weight: normal;
+    }
+    QTabBar::tab:selected {
+        font-weight: bold;
+    }
+)");
+
     QStringList bgColors = { "#1e1e1e", "#000000", "#2b2b2b", "#ffffff", "#f0f0f0" };
     QStringList fontColors = { "#00ffff", "#ffffff", "#00ff00", "#ff0000", "#000000" };
 

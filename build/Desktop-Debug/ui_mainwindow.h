@@ -54,7 +54,6 @@ public:
     QCheckBox *checkBox_4;
     QCheckBox *checkBox_5;
     QWidget *CPU;
-    QFormLayout *formLayout;
     QLabel *labelCpuModel;
     QLabel *labelCpuClock;
     QLabel *labelCpuArch;
@@ -172,28 +171,18 @@ public:
         tabWidget->addTab(General, QString());
         CPU = new QWidget();
         CPU->setObjectName("CPU");
-        formLayout = new QFormLayout(CPU);
-        formLayout->setObjectName("formLayout");
         labelCpuModel = new QLabel(CPU);
         labelCpuModel->setObjectName("labelCpuModel");
-
-        formLayout->setWidget(1, QFormLayout::LabelRole, labelCpuModel);
-
+        labelCpuModel->setGeometry(QRect(9, 141, 47, 18));
         labelCpuClock = new QLabel(CPU);
         labelCpuClock->setObjectName("labelCpuClock");
-
-        formLayout->setWidget(2, QFormLayout::LabelRole, labelCpuClock);
-
+        labelCpuClock->setGeometry(QRect(9, 273, 86, 18));
         labelCpuArch = new QLabel(CPU);
         labelCpuArch->setObjectName("labelCpuArch");
-
-        formLayout->setWidget(3, QFormLayout::LabelRole, labelCpuArch);
-
+        labelCpuArch->setGeometry(QRect(9, 405, 88, 18));
         labelCpuUsage = new QLabel(CPU);
         labelCpuUsage->setObjectName("labelCpuUsage");
-
-        formLayout->setWidget(0, QFormLayout::LabelRole, labelCpuUsage);
-
+        labelCpuUsage->setGeometry(QRect(9, 9, 77, 18));
         tabWidget->addTab(CPU, QString());
         RAM = new QWidget();
         RAM->setObjectName("RAM");

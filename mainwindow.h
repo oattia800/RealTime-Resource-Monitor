@@ -6,8 +6,6 @@
 #include "gpu.h"
 #include "network.h"
 #include <QTimer>
-
-
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
