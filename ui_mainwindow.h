@@ -59,6 +59,7 @@ public:
     QLabel *labelCpuClock;
     QLabel *labelCpuArch;
     QLabel *labelCpuUsage;
+    QWidget *layoutCpuChart;
     QWidget *RAM;
     QFormLayout *formLayout_2;
     QLabel *labelRamTotal;
@@ -194,6 +195,11 @@ public:
 
         formLayout->setWidget(0, QFormLayout::LabelRole, labelCpuUsage);
 
+        layoutCpuChart = new QWidget(CPU);
+        layoutCpuChart->setObjectName(QString::fromUtf8("layoutCpuChart"));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, layoutCpuChart);
+
         tabWidget->addTab(CPU, QString());
         RAM = new QWidget();
         RAM->setObjectName(QString::fromUtf8("RAM"));
@@ -309,7 +315,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(4);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

@@ -1,3 +1,4 @@
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QtConcurrent>
@@ -31,6 +32,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->comboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &MainWindow::applyTheme);
+    connect(ui->comboBox_2, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &MainWindow::applyTheme);
+    connect(ui->comboBox_3, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &MainWindow::applyTheme);
+    connect(ui->comboBox_4, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &MainWindow::applyTheme);
+
 
     connect(ui->checkBox, &QCheckBox::toggled, this, &MainWindow::updateTabVisibility);
     connect(ui->checkBox_2, &QCheckBox::toggled, this, &MainWindow::updateTabVisibility);
