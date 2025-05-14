@@ -1,0 +1,30 @@
+# Build artifacts
+*.o
+*.so
+*.a
+*.out
+*.exe
+*.obj
+*.dll
+*.moc
+*.qrc
+*.autosave
+*.user
+
+# Qt Creator
+*.pro.user*
+*.qbs.user*
+*.qmlproject.user*
+
+# Qt build folders
+build/
+debug/
+release/
+
+# IDE-specific
+.idea/
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
