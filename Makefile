@@ -37,7 +37,11 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = yuh1.0.0
+<<<<<<< HEAD
 DISTDIR = /home/oattia/Downloads/RealTime-Resource-Monitor-main/.tmp/yuh1.0.0
+=======
+DISTDIR = /home/oattia/Downloads/GUImockup/yuh/.tmp/yuh1.0.0
+>>>>>>> 4a533bc6b5de4621eb7e87540b126e2c15a2fb69
 LINK          = g++
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Concurrent.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
@@ -409,7 +413,11 @@ moc_mainwindow.cpp: mainwindow.h \
 		network.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
+<<<<<<< HEAD
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/oattia/Downloads/RealTime-Resource-Monitor-main/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/oattia/Downloads/RealTime-Resource-Monitor-main -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtConcurrent -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+=======
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/oattia/Downloads/GUImockup/yuh/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/oattia/Downloads/GUImockup/yuh -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtConcurrent -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+>>>>>>> 4a533bc6b5de4621eb7e87540b126e2c15a2fb69
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
